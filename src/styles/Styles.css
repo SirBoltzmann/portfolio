@@ -537,10 +537,104 @@ span {
     font-size: 2rem;
 }
 
+/* From here: Portfolio section */
+
+.portfolio {
+    background: var(--bg-color);
+}
+
+.portfolio .heading {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.portfolio-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 4rem;
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    overflow: hidden;
+    display: flex;
+    transition: 0.9s ease-in-out;
+    width: 40%;
+    height: 270px;
+    margin-left: 7rem;
+    text-decoration: none;
+}
+
+.portfolio-container .portfolio-box:hover {
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: 0.7s ease-in-out;
+    opacity: 0.6;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.16), var(--second-background-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: 0.8s ease-in-out;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.portfolio-layer p {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    font-size: 5rem;
+    margin-top: 1rem;
+}
+
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--second-background-color);
+}
+
 /* From here: "Contact" section... */ 
 
 .contact {
-    background-color: var(--bg-color);
+    background-color: var(--second-background-color);
 }
 
 .contact h2 {
@@ -569,7 +663,7 @@ span {
     padding: 2.5rem;
     font-size: 1.8rem;
     color: var(--text-color);
-    background: var(--second-background-color);
+    background: var(--bg-color);
     border-radius: 2rem;
     border: 2px solid var(--main-color);
     margin: 1.5rem 0;
@@ -585,7 +679,7 @@ span {
     bottom: 0;
     width: 100%;
     padding: 40px 0;
-    background-color: var(--second-background-color);
+    background-color: var(--bg-colorcolor);
 }
 
 .footer .social {
@@ -744,6 +838,31 @@ span {
     }
     .services-container {
         grid-template-columns: repeat(1,1fr);
+    }
+    .portfolio-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .portfolio-box {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .portfolio-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .portfolio-box {
+        width: 100%;
+        min-width: 300px; /* Establecer un ancho mínimo para evitar que las tarjetas se vuelvan demasiado delgadas */
+        height: auto;
+    }
+
+    .portfolio-layer {
+        padding: 1rem;
     }
 }
 
