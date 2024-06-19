@@ -552,7 +552,8 @@ span {
     display: flex;
     position: relative;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
+    width: 100%;
 }
 
 .portfolio-container .portfolio-box {
@@ -562,9 +563,8 @@ span {
     overflow: hidden;
     display: flex;
     transition: 0.9s ease-in-out;
-    width: 40%;
+    width: 40rem;
     height: 270px;
-    margin-left: 7rem;
     text-decoration: none;
 }
 
