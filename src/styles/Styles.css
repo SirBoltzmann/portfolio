@@ -24,7 +24,6 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    width: 100%;
 }
 
 .header {
@@ -79,16 +78,17 @@ body {
 }
 
 #menu-icon {
-    font-size: 4rem;
+    font-size: 3.6rem;
     color: var(--main-color);
     display: none;
-    cursor: pointer;
 }
 
 section {
     min-height: 100vh;
     padding: 10rem 12% 10rem;
 }
+
+/* From here: "Home" section... */ 
 
 .home {
     display: flex;
@@ -142,9 +142,9 @@ span {
 }
 
 .home-img img:hover {
-    box-shadow: 0 0 20px var(--main-color),
-                0 0 40px var(--main-color),
-                0 0 80px var(--main-color)
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color)
 }
 
 .home-content p {
@@ -551,11 +551,10 @@ span {
 }
 
 .portfolio-container {
-    display: flex;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /*repeat(2, 1fr);: Esta propiedad define el número y el tamaño de las columnas en la cuadrícula. */
     align-items: center;
-    gap: 3rem;
-    width: 100%;
+    gap: 2.5rem;
 }
 
 .portfolio-container .portfolio-box {
@@ -565,9 +564,10 @@ span {
     overflow: hidden;
     display: flex;
     transition: 0.9s ease-in-out;
-    width: 40rem;
-    height: 270px;
     text-decoration: none;
+    height: 300px;
+    width: 100%;
+    align-content: center;
 }
 
 .portfolio-container .portfolio-box:hover {
@@ -841,20 +841,30 @@ span {
     .services-container {
         grid-template-columns: repeat(1,1fr);
     }
+}
+
+@media (max-width: 670px) {
     .portfolio-container {
-        flex-direction: column;
-        gap: 3rem;
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 1.5rem;
     }
+
     .portfolio-box {
         width: 100%;
-        height: auto;
+        min-width: 270px; /* Establecer un ancho mínimo para evitar que las tarjetas se vuelvan demasiado delgadas */
+        height: 200px;
+    }
+
+    .portfolio-layer {
+        padding: 1rem;
     }
 }
 
 @media (max-width: 550px) {
     .portfolio-container {
-        flex-direction: column;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .portfolio-box {
@@ -865,10 +875,6 @@ span {
 
     .portfolio-layer {
         padding: 1rem;
-    }
-
-    .heading {
-        font-size: 6rem;
     }
 }
 
