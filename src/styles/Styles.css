@@ -24,6 +24,8 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+/*     width: 100%;
+    box-sizing: border-box; */
 }
 
 .header {
@@ -875,6 +877,10 @@ span {
 
     .portfolio-layer {
         padding: 1rem;
+    }
+
+    .heading {
+        font-size: 5rem;
     }
 }
 
