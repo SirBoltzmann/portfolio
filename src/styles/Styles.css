@@ -554,9 +554,9 @@ span {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr); /*repeat(2, 1fr);: Esta propiedad define el número y el tamaño de las columnas en la cuadrícula. */
+    grid-template-columns: repeat(3,1fr); /*repeat(2, 1fr);: Esta propiedad define el número y el tamaño de las columnas en la cuadrícula. */
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.8rem;
 }
 
 .portfolio-container .portfolio-box {
@@ -567,7 +567,7 @@ span {
     display: flex;
     transition: 0.9s ease-in-out;
     text-decoration: none;
-    height: 300px;
+    height: 280px;
     width: 100%;
     align-content: center;
 }
@@ -757,9 +757,20 @@ span {
         grid-template-columns: repeat(2,1fr);
         margin: 0 5rem;
     }
+
+    .portfolio {
+        padding: 6rem 3rem;
+    }
+
+    .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(3,1fr); /*repeat(2, 1fr);: Esta propiedad define el número y el tamaño de las columnas en la cuadrícula. */
+        align-items: center;
+        gap: 1.8rem;
+    }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1015px) {
     header {
         padding: 2rem 3%;
     }
@@ -786,6 +797,12 @@ span {
     .testimonials .wrapper {
         grid-template-columns: repeat(1,1fr);
     }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.5rem;
+    }
+
     .contact form {
         flex-direction: column;
     }
@@ -846,17 +863,25 @@ span {
     }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 800px) {
     .portfolio-container {
-        display: grid;
-        grid-template-columns: (1, 1fr);
-        grid-gap: 1.5rem;
+        grid-template-columns: 1fr;
     }
 
-    .portfolio-box {
-        width: 100%;
-        min-width: 270px; /* Establecer un ancho mínimo para evitar que las tarjetas se vuelvan demasiado delgadas */
-        height: 200px;
+    .portfolio-container .portfolio-box {
+        justify-self: center;
+        width: 70%;
+    }
+}
+
+@media (max-width: 670px) {
+    .portfolio {
+        padding: 5rem 0;
+    }
+
+    .portfolio-container .portfolio-box {
+        width: 80%;
+        min-width: 290px; /* Establecer un ancho mínimo para evitar que las tarjetas se vuelvan demasiado delgadas */
     }
 
     .portfolio-layer {
@@ -865,17 +890,6 @@ span {
 }
 
 @media (max-width: 550px) {
-    .portfolio-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .portfolio-box {
-        width: 100%;
-        min-width: 300px; /* Establecer un ancho mínimo para evitar que las tarjetas se vuelvan demasiado delgadas */
-        height: auto;
-    }
-
     .portfolio-layer {
         padding: 1rem;
     }
